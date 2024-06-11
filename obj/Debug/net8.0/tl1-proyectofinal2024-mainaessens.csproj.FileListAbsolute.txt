@@ -1,0 +1,15 @@
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\bin\Debug\net8.0\tl1-proyectofinal2024-mainaessens.exe
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\bin\Debug\net8.0\tl1-proyectofinal2024-mainaessens.deps.json
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\bin\Debug\net8.0\tl1-proyectofinal2024-mainaessens.runtimeconfig.json
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\bin\Debug\net8.0\tl1-proyectofinal2024-mainaessens.dll
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\bin\Debug\net8.0\tl1-proyectofinal2024-mainaessens.pdb
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.AssemblyInfoInputs.cache
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.AssemblyInfo.cs
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.csproj.CoreCompileInputs.cache
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.sourcelink.json
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.dll
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\refint\tl1-proyectofinal2024-mainaessens.dll
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.pdb
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\tl1-proyectofinal2024-mainaessens.genruntimeconfig.cache
+C:\Users\naess\Documents\FACET\REPOSITORIOS\PROYECTO FINAL\tl1-proyectofinal2024-mainaessens\obj\Debug\net8.0\ref\tl1-proyectofinal2024-mainaessens.dll
