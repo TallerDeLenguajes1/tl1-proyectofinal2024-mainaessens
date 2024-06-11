@@ -1,0 +1,134 @@
+Proyecto final 
+Título: Los Simpson - Invasión Extraterrestre 
+Desarrollo: El juego propuesto se centra en un enfrentamiento entre la familia Simpson y extraterrestres. La mecánica es la siguiente:
+
+- **Inicio del Juego**: Cada miembro de la familia Simpson se enfrentará de manera aleatoria con un extraterrestre.
+- **Condiciones de Victoria**:
+  - **Victoria de los Simpson**: Si al final del combate, al menos un miembro de la familia Simpson sigue con vida.
+  - **Victoria de los Extraterrestres**: Si todos los Simpson son derrotados y queda al menos un extraterrestre con vida.
+  - **Empate**: En caso de que ambos bandos queden sin supervivientes, se realizará una comparación de características físicas para determinar al ganador.
+- **Sistema de Combate**: Se empleará un sistema de combate por turnos, donde los resultados se determinarán mediante **cálculos matemáticos y probabilísticos** basados en las habilidades de cada personaje.
+- **Fin del Combate**: El combate continúa hasta que la salud de un combatiente sea igual o inferior a cero, lo que indica su derrota.
+
+El juego combina elementos de estrategia y azar, proporcionando una experiencia dinámica y emocionante para los jugadores.
+
+ 
+Personajes: 
+
+Familia Simpson: 
+-Homer Jay Simpson: 
+  Apodo: Homero 
+  Edad: 36 años
+
+  Fuerza: 5
+  Velocidad: 2
+  Destreza: 2
+  Inteligencia: 1
+  Agresivo: 5
+  Salud: 100
+  
+-Bartholomew JoJo Simpson: 
+  Apodo: Bart
+  Edad: 10 años
+
+  Fuerza: 3
+  Velocidad: 5 
+  Destreza: 5
+  Inteligencia: 2
+  Agresivo: 3
+  Salud: 100
+
+-Lisa Marie Simpson: 
+  Apodo: Lisa
+  Edad:  8 años 
+
+  Fuerza: 1
+  Velocidad: 5 
+  Destreza: 2
+  Inteligencia: 5
+  Agresivo: 1
+  Salud: 100
+
+-Marjorie Jacqueline Bouvier: 
+  Apodo: Marge
+  Edad: 34 años
+
+  Fuerza: 3
+  Velocidad: 3 
+  Destreza: 5
+  Inteligencia: 4 
+  Agresivo: 3
+  Salud: 100
+  
+-Margaret Simpson: 
+  Apodo: Maggie
+  Edad: 1 año
+
+  Fuerza: 4
+  Velocidad: 5 
+  Destreza: 5
+  Inteligencia: 3
+  Agresivo: 5
+  Salud: 100
+
+Extraterrestre del planeta Rigel VII: 
+-Kang
+
+  Apodo: Kang
+  Edad: 100 años
+
+  Fuerza: 4
+  Velocidad: 3 
+  Destreza: 4
+  Inteligencia: 3
+  Agresivo: 5
+  Salud: 100
+ 
+-Kodos: 
+ 
+  Apodo: Kodos
+  Edad: 80 años
+
+  Fuerza: 3
+  Velocidad: 3 
+  Destreza: 5
+  Inteligencia: 1
+  Agresivo: 1
+  Salud: 100
+
+
+-Serak the preparer
+ 
+  Apodo: Serak
+  Edad: 60 años
+
+  Fuerza: 3
+  Velocidad: 5 
+  Destreza: 4
+  Inteligencia: 3
+  Agresivo: 5
+  Salud: 100 
+
+-Kamala
+
+  Apodo: Kamala
+  Edad: 40 años
+
+  Fuerza: 5
+  Velocidad: 5 
+  Destreza: 4
+  Inteligencia: 3
+  Agresivo: 2
+  Salud: 100
+
+-Ozmodiar
+
+  Apodo: Ozmodiar
+  Edad: 120 años
+
+  Fuerza: 2
+  Velocidad: 5 
+  Destreza: 3
+  Inteligencia: 2
+  Agresivo: 5
+  Salud: 100
