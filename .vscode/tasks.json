@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/tl1-proyectofinal2024-mainaessens.csproj", //tl1-proyectofinal2024-mainaessens POR EL NOMBRE DEL ARCHIVO .csproj QUE ESTA EN LA CARPETA RAIZ 
+                "${workspaceFolder}/tl1-proyectofinal2024-mainaessens.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/tl1-proyectofinal2024-mainaessens.csproj", //tl1-proyectofinal2024-mainaessens POR EL NOMBRE DEL ARCHIVO .csproj QUE ESTA EN LA CARPETA RAIZ
+                "${workspaceFolder}/tl1-proyectofinal2024-mainaessens.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/tl1-proyectofinal2024-mainaessens.csproj" //tl1-proyectofinal2024-mainaessens POR EL NOMBRE DEL ARCHIVO .csproj QUE ESTA EN LA CARPETA RAIZ
+                "${workspaceFolder}/tl1-proyectofinal2024-mainaessens.sln"
             ],
             "problemMatcher": "$msCompile"
         }
