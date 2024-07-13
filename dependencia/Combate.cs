@@ -1,4 +1,4 @@
-namespace Combate
+namespace CombateSimpson
 {
     public class Combate
     {
