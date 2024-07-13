@@ -41,4 +41,24 @@ public class CitaAPI
             throw;
         }
     }
+
+    public static async Task<List<CitaAPI>> ObtenerCitasAPI(int cantidad)
+    {
+        var url = $"https://thesimpsonsquoteapi.glitch.me/quotes?count={cantidad}";
+        try
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("User-Agent", "C# App");
+            HttpResponseMessage response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            List<CitaAPI> listaCitaAPI = JsonSerializer.Deserialize<List<CitaAPI>>(responseBody);
+            return listaCitaAPI;
+        }
+        catch (HttpRequestException)
+        {
+            Console.WriteLine("ERROR: No se pudo acceder a la API.");
+            throw;
+        }
+    }
 }

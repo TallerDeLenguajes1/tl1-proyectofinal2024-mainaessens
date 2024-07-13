@@ -1,32 +1,47 @@
+
 using System.Diagnostics;
 using CombateSimpson; 
+using MenuSeleccionable; 
 
 namespace Start
 {       
     public static class GameRun
     {
         public static async Task EmpezarAJugar(List<string> historialGanadores)
+    {
+        try
         {
-            try
+            Console.WriteLine("Obteniendo personajes de la API...");
+            List<CitaAPI> citasAPI = await CitaAPI.ObtenerCitasAPI(5);
+
+            Console.WriteLine("Selecciona tu personaje:");
+            string[] personajes = new string[citasAPI.Count];
+            for (int i = 0; i < citasAPI.Count; i++)
             {
-                Console.WriteLine("Obteniendo personaje de la API...");
-                CitaAPI nuevaCitaAPI = await CitaAPI.ObtenerCitaAPI();
-                nuevaCitaAPI.Listar();
-                string url = nuevaCitaAPI.Image;
-                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
-
-                Personaje personajeUsuario = FabricaDePersonajes.CrearPersonaje(nuevaCitaAPI.Character);
-                Personaje personajeMaquina = FabricaDePersonajes.CrearPersonaje("Alien");
-
-                Combate combate = new Combate(personajeUsuario, personajeMaquina);
-                string ganador = combate.IniciarCombate();
-
-                historialGanadores.Add(ganador);
+                personajes[i] = citasAPI[i].Character;
+                Console.WriteLine($"{i + 1}. {citasAPI[i].Character}");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR FATAL. Se detuvo la ejecución. " + ex.Message);
-            }
+
+            int seleccion = Menu.MostrarMenu(personajes);
+            CitaAPI citaSeleccionada = citasAPI[seleccion];
+
+            string url = citaSeleccionada.Image;
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+
+            Personaje personajeUsuario = FabricaDePersonajes.CrearPersonaje(citaSeleccionada.Character);
+            Personaje personajeMaquina = FabricaDePersonajes.CrearPersonaje("Alien");
+
+            Combate combate = new Combate(personajeUsuario, personajeMaquina);
+            string ganador = combate.IniciarCombate();
+
+            historialGanadores.Add(ganador);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("ERROR FATAL. Se detuvo la ejecución. " + ex.Message);
         }
     }
+    }
 }
+
+
