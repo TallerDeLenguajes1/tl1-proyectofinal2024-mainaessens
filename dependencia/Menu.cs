@@ -21,7 +21,7 @@ namespace MenuSeleccionable
                     return seleccion - 1;
                 }
                 Console.WriteLine("Selección inválida. Por favor, elige una opción válida.");
-                //Console.Clear(); // Comentar para evitar limpiar la consola antes de regresar
+                Console.Clear();
             }
         }
     }

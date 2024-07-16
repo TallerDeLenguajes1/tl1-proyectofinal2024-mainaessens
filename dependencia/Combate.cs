@@ -28,9 +28,16 @@ namespace CombateSimpson
             }
 
             //MostrarCuadroDeEstadisticas(jugador, enemigo);
-            string ganador = jugador.Salud > 0 ? jugador.Nombre : enemigo.Nombre;
+            string ganador; 
+            if (jugador.Salud > 0)
+            {
+                ganador = jugador.Nombre; 
+            }else {
+                ganador = enemigo.Nombre; 
+            }
+            //string ganador = jugador.Salud > 0 ? jugador.Nombre : enemigo.Nombre;
             Console.WriteLine($"¡{ganador} ha ganado el combate!");
-            Console.Clear();
+            //Console.Clear();
             return ganador;
         }
 

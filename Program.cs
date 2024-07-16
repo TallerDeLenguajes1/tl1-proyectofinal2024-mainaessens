@@ -33,6 +33,7 @@ internal class Program
             {
                 case 0:
                     await GameRun.EmpezarAJugar(historialGanadores);
+                    // Console.Clear(); 
                     break;
                 case 1:
                     Historial.VerHistorial(historialGanadores);
