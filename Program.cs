@@ -24,7 +24,7 @@ internal class Program
                     await GameRun.EmpezarAJugar(historialGanadores);
                     break;
                 case 1:
-                    //Historial.VerHistorial(historialGanadores);
+                    Historial.VerHistorial(historialGanadores);
                     break;
                 case 2:
                     salir = true;

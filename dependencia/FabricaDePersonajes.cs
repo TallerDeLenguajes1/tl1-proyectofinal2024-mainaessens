@@ -9,10 +9,11 @@ public static class FabricaDePersonajes
     }
     public static Personaje CrearEnemigo()
         {
-            string[] nombresEnemigos = { "Kang", "Kodos", "Serak", "Kamala", "Ozmodiar" };
+           // Por simplicidad, aquí creamos un enemigo genérico
             Random random = new Random();
-            string nombre = nombresEnemigos[random.Next(nombresEnemigos.Length)];
-            return new Personaje (nombre);
+            string nombre = "Alien";
+
+            return new Personaje(nombre);
         }
 }
 
