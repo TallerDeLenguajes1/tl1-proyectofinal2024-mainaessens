@@ -53,11 +53,14 @@ namespace CombateSimpson
 
         private void TurnoConOpciones(Personaje atacante, Personaje defensor)
         {
+            string[] opciones = { "Atacar", "Defender", "Rendirse" };
+
             while (true)
             {
+                Console.Clear(); 
+                Console.SetCursorPosition(0, 0); // Volver al inicio de la pantalla
                 MostrarCuadroDeEstadisticas(jugador, enemigo);
                 Console.WriteLine($"{atacante.Nombre}, ¿qué quieres hacer?");
-                string[] opciones = { "Atacar", "Defender", "Rendirse" };
                 int seleccion = Menu.MostrarMenu(opciones);
 
                 switch (seleccion)
@@ -70,11 +73,11 @@ namespace CombateSimpson
                         return; // Salir del bucle después de la acción
                     case 2: // Rendirse
                         Console.WriteLine($"{atacante.Nombre} se rinde. ¡Has perdido el combate!");
-                        Environment.Exit(0); // Opción rápida para salir del programa; considera manejarlo de manera más elegante
+                        Environment.Exit(0); 
                         break;
                     default:
                         Console.WriteLine("Opción no válida. Se asumirá que te rindes.");
-                        Environment.Exit(0); // Igualmente, considera manejar este caso mejor
+                        Environment.Exit(0); 
                         break;
                 }
             }
@@ -104,16 +107,55 @@ namespace CombateSimpson
 
         private void MostrarCuadroDeEstadisticas(Personaje p1, Personaje p2)
         {
-            Console.Clear();
             Console.WriteLine("--------------------------------------------------");
+
+            // Mostrar estadísticas del jugador
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"| {p1.Nombre.PadRight(20)} | {p2.Nombre.PadRight(20)} |");
+            Console.ResetColor();
+
             Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine($"| Salud: {BarraDeSalud(p1.Salud, 100)} {p1.Salud}/100 | Salud: {BarraDeSalud(p2.Salud, 100)} {p2.Salud}/100 |");
-            Console.WriteLine($"| Fuerza: {p1.Fuerza.ToString().PadRight(3)} | Fuerza: {p2.Fuerza.ToString().PadRight(3)} |");
-            Console.WriteLine($"| Velocidad: {p1.Velocidad.ToString().PadRight(3)} | Velocidad: {p2.Velocidad.ToString().PadRight(3)} |");
-            Console.WriteLine($"| Destreza: {p1.Destreza.ToString().PadRight(3)} | Destreza: {p2.Destreza.ToString().PadRight(3)} |");
-            Console.WriteLine($"| Inteligencia: {p1.Inteligencia.ToString().PadRight(3)} | Inteligencia: {p2.Inteligencia.ToString().PadRight(3)} |");
-            Console.WriteLine($"| Agresivo: {p1.Agresivo.ToString().PadRight(3)} | Agresivo: {p2.Agresivo.ToString().PadRight(3)} |");
+            
+            // Mostrar salud del jugador y del enemigo
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"| Salud: {BarraDeSalud(p1.Salud, 100)} {p1.Salud}/100 ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"| Salud: {BarraDeSalud(p2.Salud, 100)} {p2.Salud}/100 |");
+            Console.ResetColor();
+            
+            // // Mostrar otras estadísticas
+            // Console.ForegroundColor = ConsoleColor.Green;
+            // Console.WriteLine($"| Fuerza: {p1.Fuerza.ToString().PadRight(3)} ");
+            // Console.ResetColor();
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine($"| Fuerza: {p2.Fuerza.ToString().PadRight(3)} |");
+
+            // Console.ForegroundColor = ConsoleColor.Green;
+            // Console.WriteLine($"| Velocidad: {p1.Velocidad.ToString().PadRight(3)} ");
+            // Console.ResetColor();
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine($"| Velocidad: {p2.Velocidad.ToString().PadRight(3)} |");
+
+            // Console.ForegroundColor = ConsoleColor.Green;
+            // Console.WriteLine($"| Destreza: {p1.Destreza.ToString().PadRight(3)} ");
+            // Console.ResetColor();
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine($"| Destreza: {p2.Destreza.ToString().PadRight(3)} |");
+
+            // Console.ForegroundColor = ConsoleColor.Green;
+            // Console.WriteLine($"| Inteligencia: {p1.Inteligencia.ToString().PadRight(3)} ");
+            // Console.ResetColor();
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine($"| Inteligencia: {p2.Inteligencia.ToString().PadRight(3)} |");
+
+            // Console.ForegroundColor = ConsoleColor.Green;
+            // Console.WriteLine($"| Agresivo: {p1.Agresivo.ToString().PadRight(3)} ");
+            // Console.ResetColor();
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine($"| Agresivo: {p2.Agresivo.ToString().PadRight(3)} |");
+
+            //Console.ResetColor();
             Console.WriteLine("--------------------------------------------------");
         }
 
