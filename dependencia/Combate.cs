@@ -1,4 +1,3 @@
-using System;
 using MenuSeleccionable;
 
 namespace CombateSimpson
@@ -102,7 +101,7 @@ namespace CombateSimpson
             int efectividad = random.Next(1, 101);
             int defensa = defensor.Inteligencia * defensor.Velocidad;
             int dañoProvocado = (ataque * efectividad - defensa) / 500;
-            return dañoProvocado < 0 ? 0 : dañoProvocado;
+            return Math.Max(dañoProvocado, 0); // Asegurarse de que el daño no sea negativo
         }
 
         private void MostrarCuadroDeEstadisticas(Personaje p1, Personaje p2)
@@ -124,38 +123,6 @@ namespace CombateSimpson
             Console.WriteLine($"| Salud: {BarraDeSalud(p2.Salud, 100)} {p2.Salud}/100 |");
             Console.ResetColor();
             
-            // // Mostrar otras estadísticas
-            // Console.ForegroundColor = ConsoleColor.Green;
-            // Console.WriteLine($"| Fuerza: {p1.Fuerza.ToString().PadRight(3)} ");
-            // Console.ResetColor();
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine($"| Fuerza: {p2.Fuerza.ToString().PadRight(3)} |");
-
-            // Console.ForegroundColor = ConsoleColor.Green;
-            // Console.WriteLine($"| Velocidad: {p1.Velocidad.ToString().PadRight(3)} ");
-            // Console.ResetColor();
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine($"| Velocidad: {p2.Velocidad.ToString().PadRight(3)} |");
-
-            // Console.ForegroundColor = ConsoleColor.Green;
-            // Console.WriteLine($"| Destreza: {p1.Destreza.ToString().PadRight(3)} ");
-            // Console.ResetColor();
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine($"| Destreza: {p2.Destreza.ToString().PadRight(3)} |");
-
-            // Console.ForegroundColor = ConsoleColor.Green;
-            // Console.WriteLine($"| Inteligencia: {p1.Inteligencia.ToString().PadRight(3)} ");
-            // Console.ResetColor();
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine($"| Inteligencia: {p2.Inteligencia.ToString().PadRight(3)} |");
-
-            // Console.ForegroundColor = ConsoleColor.Green;
-            // Console.WriteLine($"| Agresivo: {p1.Agresivo.ToString().PadRight(3)} ");
-            // Console.ResetColor();
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine($"| Agresivo: {p2.Agresivo.ToString().PadRight(3)} |");
-
-            //Console.ResetColor();
             Console.WriteLine("--------------------------------------------------");
         }
 

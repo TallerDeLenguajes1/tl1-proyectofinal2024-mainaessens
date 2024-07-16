@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Mensajes;
+﻿using Mensajes;
 using Start;
-using MenuSeleccionable;
+using MenuSeleccionable; 
 
 internal class Program
 {
@@ -11,11 +8,12 @@ internal class Program
     {
         Console.CursorVisible = false;
         string[] letraASCII = {
-                @"_____ .   . .___       __  . .    . .__   __   __  .   .  __",
-                @"  |   |   | |         (__` | |\  /| |  \ (__` /  \ |\  | (__ ",
-                @"  |   |---| |---         \ | | \/ | |__/    \ |  | | \ |    \",
-                @"  |   |   | |___      \__/ | |    | |    \__/ \__/ |  \| \__/"
-            };
+            @"_____ .   . .___       __  . .    . .__   __   __  .   .  __",
+            @"  |   |   | |         (__` | |\  /| |  \ (__` /  \ |\  | (__ ",
+            @"  |   |---| |---         \ | | \/ | |__/    \ |  | | \ |    \",
+            @"  |   |   | |___      \__/ | |    | |    \__/ \__/ |  \| \__/"
+        };
+        
         foreach (string linea in letraASCII)
         {
             Console.WriteLine(linea);
@@ -26,7 +24,7 @@ internal class Program
 
         while (!salir)
         {
-            //Console.Clear();
+            Console.Clear(); // Descomentar para limpiar la consola en cada iteración
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Bienvenido al juego de Los Simpsons!");
 
