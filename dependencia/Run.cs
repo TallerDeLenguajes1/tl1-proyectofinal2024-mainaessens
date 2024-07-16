@@ -2,6 +2,7 @@ using Fabrica;
 using System.Diagnostics;
 using CombateSimpson;
 using MenuSeleccionable;
+using Mensajes; 
 
 namespace Start
 {
@@ -35,42 +36,8 @@ namespace Start
                 Combate combate = new Combate(personajeUsuario, personajeMaquina);
                 string ganador = combate.IniciarCombate();
 
-                if (ganador == personajeUsuario.Nombre)
-            {   
-            Console.ForegroundColor = ConsoleColor.Blue; 
-            string[] cartel = {
-   @"********      **     ****     **     **     *******     *******   *******",
-  @"**//////**    ****   /**/**   /**    ****   /**////**   **/////** /**////** ",
- @"**      //    **//**  /**//**  /**   **//**  /**    /** **     //**/**   /** ",
-@"/**           **  //** /** //** /**  **  //** /**    /**/**      /**/*******  ",
-@"/**    ***** **********/**  //**/** **********/**    /**/**      /**/**///**  ",
-@"//**  ////**/**//////**/**   //****/**//////**/**    ** //**     ** /**  //** ",
- @"//******** /**     /**/**    //***/**     /**/*******   //*******  /**   //**",
-  @"////////  //      // //      /// //      // ///////     ///////   //     //" 
-            }; 
-            foreach (string linea in cartel)
-        {
-            Console.WriteLine(linea);
-        }
+                TerminalMensajes.GanaPierde(personajeUsuario,ganador); 
 
-            }else{
-                Console.ForegroundColor = ConsoleColor.Red; 
-                string[] cartel = {
-@"*******  ******** *******   *******   ******** *******     *******   *******  ",
-@"/**////**/**///// /**////** /**////** /**///// /**////**   **/////** /**////** ",
-@"/**   /**/**      /**   /** /**    /**/**      /**    /** **     //**/**   /** ",
-@"/******* /******* /*******  /**    /**/******* /**    /**/**      /**/*******  ",
-@"/**////  /**////  /**///**  /**    /**/**////  /**    /**/**      /**/**///**  ",
-@"/**      /**      /**  //** /**    ** /**      /**    ** //**     ** /**  //** ",
-@"/**      /********/**   //**/*******  /********/*******   //*******  /**   //**",
-@"//       //////// //     // ///////   //////// ///////     ///////   //     // "
-                };
-                foreach (string linea in cartel)
-        {
-            Console.WriteLine(linea);
-        }
-
-            }
 
                 historialGanadores.Add(ganador);
             }
