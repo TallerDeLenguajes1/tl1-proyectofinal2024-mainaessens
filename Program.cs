@@ -22,18 +22,17 @@ internal class Program
         bool salir = false;
         List<string> historialGanadores = new List<string>();
 
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("Bienvenido al juego de Los Simpsons!");
         while (!salir)
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Bienvenido al juego de Los Simpsons!");
-            string[] opciones = { "Empezar a jugar", "Ver historial de ganadores", "Salir" };
+            string[] opciones = { "Jugar", "Ver historial de ganadores", "Salir" };
             int seleccion = Menu.MostrarMenu(opciones);
 
             switch (seleccion)
             {
                 case 0:
                     await GameRun.EmpezarAJugar(historialGanadores);
-                    // Console.Clear(); 
                     break;
                 case 1:
                     Historial.VerHistorial(historialGanadores);

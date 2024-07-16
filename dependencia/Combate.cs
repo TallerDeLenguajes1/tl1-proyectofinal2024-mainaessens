@@ -117,20 +117,13 @@ namespace CombateSimpson
         private void MostrarCuadroDeEstadisticas(Personaje p1, Personaje p2)
         {
             Console.WriteLine("--------------------------------------------------");
-
-            // Mostrar estadísticas del jugador
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"| {p1.Nombre.PadRight(20)} | {p2.Nombre.PadRight(20)} |");
-            Console.ResetColor();
-
-            Console.WriteLine("--------------------------------------------------");
             
             // Mostrar salud del jugador y del enemigo
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"| Salud: {BarraDeSalud(p1.Salud, 100)} {p1.Salud}/100 ");
+            Console.WriteLine($"{p1.Nombre.PadRight(20)}| Salud: {BarraDeSalud(p1.Salud, 100)} {p1.Salud}/100 ");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"| Salud: {BarraDeSalud(p2.Salud, 100)} {p2.Salud}/100 |");
+            Console.WriteLine($"{p2.Nombre.PadRight(20)}| Salud: {BarraDeSalud(p2.Salud, 100)} {p2.Salud}/100 |");
             Console.ResetColor();
             
             Console.WriteLine("--------------------------------------------------");
