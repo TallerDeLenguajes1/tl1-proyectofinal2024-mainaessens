@@ -24,10 +24,8 @@ internal class Program
 
         while (!salir)
         {
-            Console.Clear(); // Descomentar para limpiar la consola en cada iteración
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Bienvenido al juego de Los Simpsons!");
-
             string[] opciones = { "Empezar a jugar", "Ver historial de ganadores", "Salir" };
             int seleccion = Menu.MostrarMenu(opciones);
 

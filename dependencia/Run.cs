@@ -11,6 +11,7 @@ namespace Start
         {
             try
             {
+                Console.Clear();
                 Console.WriteLine("Obteniendo personajes de la API...");
                 List<CitaAPI> citasAPI = await CitaAPI.ObtenerCitasAPI(5);
 
@@ -19,7 +20,7 @@ namespace Start
                 for (int i = 0; i < citasAPI.Count; i++)
                 {
                     personajes[i] = citasAPI[i].Character;
-                    Console.WriteLine($"{i + 1}. {citasAPI[i].Character}");
+                    //Console.WriteLine($"{i + 1}. {citasAPI[i].Character}");
                 }
 
                 int seleccion = Menu.MostrarMenu(personajes);
@@ -29,7 +30,7 @@ namespace Start
                 Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 
                 Personaje personajeUsuario = FabricaDePersonajes.CrearPersonaje(citaSeleccionada.Character);
-                Personaje personajeMaquina = FabricaDePersonajes.CrearEnemigo(); // Aquí puedes mejorar la creación de enemigos
+                Personaje personajeMaquina = FabricaDePersonajes.CrearEnemigo();
 
                 Combate combate = new Combate(personajeUsuario, personajeMaquina);
                 string ganador = combate.IniciarCombate();

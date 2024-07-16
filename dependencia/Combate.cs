@@ -13,6 +13,7 @@ namespace CombateSimpson
         {
             jugador = p1;
             enemigo = p2;
+            Console.Clear(); 
             Console.WriteLine($"¡Comienza la batalla entre {jugador.Nombre} y {enemigo.Nombre}!");
         }
 
@@ -26,9 +27,10 @@ namespace CombateSimpson
                 Turno(enemigo, jugador);
             }
 
-            MostrarCuadroDeEstadisticas(jugador, enemigo);
+            //MostrarCuadroDeEstadisticas(jugador, enemigo);
             string ganador = jugador.Salud > 0 ? jugador.Nombre : enemigo.Nombre;
             Console.WriteLine($"¡{ganador} ha ganado el combate!");
+            Console.Clear();
             return ganador;
         }
 
@@ -56,10 +58,9 @@ namespace CombateSimpson
 
             while (true)
             {
-                Console.Clear(); 
-                Console.SetCursorPosition(0, 0); // Volver al inicio de la pantalla
-                MostrarCuadroDeEstadisticas(jugador, enemigo);
-                Console.WriteLine($"{atacante.Nombre}, ¿qué quieres hacer?");
+                //Console.SetCursorPosition(0, 0); // Volver al inicio de la pantalla
+                //MostrarCuadroDeEstadisticas(jugador, enemigo);
+                Console.WriteLine($"\t{atacante.Nombre}, ¿qué quieres hacer?");
                 int seleccion = Menu.MostrarMenu(opciones);
 
                 switch (seleccion)
@@ -87,12 +88,14 @@ namespace CombateSimpson
             int dañoProvocado = CalcularDaño(atacante, defensor);
             Console.WriteLine($"{atacante.Nombre} causa {dañoProvocado} de daño a {defensor.Nombre}");
             defensor.Salud -= dañoProvocado;
+            Console.Clear(); 
         }
 
         private void RealizarDefensa(Personaje defensor)
         {
             Console.WriteLine($"{defensor.Nombre} se defiende y recibirá menos daño en el próximo turno.");
             jugadorDefendiendo = true;
+            Console.Clear(); 
         }
 
         private int CalcularDaño(Personaje atacante, Personaje defensor)
