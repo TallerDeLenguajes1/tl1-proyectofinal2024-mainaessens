@@ -1,7 +1,7 @@
-
 using System.Diagnostics;
 using CombateSimpson; 
 using MenuSeleccionable; 
+using Fabrica; 
 
 namespace Start
 {       
@@ -28,11 +28,15 @@ namespace Start
             string url = citaSeleccionada.Image;
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 
+            Console.WriteLine($"Frase de tu personaje: {citaSeleccionada.Quote}");
+
             Personaje personajeUsuario = FabricaDePersonajes.CrearPersonaje(citaSeleccionada.Character);
             Personaje personajeMaquina = FabricaDePersonajes.CrearPersonaje("Alien");
 
             Combate combate = new Combate(personajeUsuario, personajeMaquina);
             string ganador = combate.IniciarCombate();
+
+            Console.WriteLine($"El ganador es: {ganador}"); 
 
             historialGanadores.Add(ganador);
         }
