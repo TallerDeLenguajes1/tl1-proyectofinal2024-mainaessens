@@ -1,6 +1,7 @@
 using Fabrica;
 using System.Diagnostics;
 using CombateSimpson;
+using TorneoSimpson;
 using MenuSeleccionable;
 using Mensajes; 
 
@@ -30,14 +31,17 @@ namespace Start
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 
             Personaje personajeUsuario = FabricaDePersonajes.CrearPersonaje(citaSeleccionada.Character);
-            Personaje personajeMaquina = FabricaDePersonajes.CrearEnemigo();
+            //Personaje personajeMaquina = FabricaDePersonajes.CrearEnemigo();
 
-            Combate combate = new Combate(personajeUsuario, personajeMaquina);
-            string ganador = combate.IniciarCombate();
+            //Combate combate = new Combate(personajeUsuario, personajeMaquina);
+            //string ganador = combate.IniciarCombate();
 
-            TerminalMensajes.GanaPierde(personajeUsuario, ganador);
+            Torneo torneo = new Torneo();
+            torneo.IniciarTorneo(personajeUsuario);
 
-            historialGanadores.Add(ganador);
+            //TerminalMensajes.GanaPierde(personajeUsuario, ganador);
+
+            //historialGanadores.Add(ganador);
         }
         catch (HttpRequestException ex)
         {

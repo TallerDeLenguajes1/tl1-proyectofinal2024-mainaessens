@@ -7,13 +7,9 @@ public static class FabricaDePersonajes
     {
         return new Personaje(nombre);
     }
-    public static Personaje CrearEnemigo()
+    public static Personaje CrearEnemigo(string nombreEnemigo)
         {
-           // Por simplicidad, aquí creamos un enemigo genérico
-            Random random = new Random();
-            string nombre = "Alien";
-
-            return new Personaje(nombre);
+            return new Personaje(nombreEnemigo);
         }
 }
 
