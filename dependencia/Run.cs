@@ -20,7 +20,7 @@ namespace Start
                 string[] personajes = new string[citasAPI.Count];
                 for (int i = 0; i < citasAPI.Count; i++)
                 {
-                    personajes[i] = citasAPI[i].Character;
+                    personajes[i] = citasAPI[i].Character; //aplicar filtro para ver si el personaje ya fue agregado
                     //Console.WriteLine($"{i + 1}. {citasAPI[i].Character}");
                 }
 
