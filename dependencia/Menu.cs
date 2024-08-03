@@ -1,4 +1,8 @@
-public static class Menu
+using System;
+
+namespace MenuSeleccionable
+{
+    public static class Menu
 {
     public static int MostrarMenu(string[] opciones)
     {
@@ -25,3 +29,6 @@ public static class Menu
         }
     }
 }
+}
+
+
