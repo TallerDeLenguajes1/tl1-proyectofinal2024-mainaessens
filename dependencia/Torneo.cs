@@ -2,6 +2,7 @@ using System;
 using CombateSimpson;
 using Fabrica; 
 using Mensajes; 
+using Ganadores; 
 
 namespace TorneoSimpson
 {
@@ -52,9 +53,16 @@ namespace TorneoSimpson
                 }
             }
 
-            string ganadorTorneo = jugador.Nombre; 
+            Ganador ganadorTorneo = new Ganador
+            {
+                Nombre = jugador.Nombre,
+                Fecha = DateTime.Now,
+                NivelAlcanzado = nivel
+            };
+
             Console.WriteLine("¡Felicidades! Has ganado el torneo.");
-            TerminalMensajes.GanaPierde(jugador, ganadorTorneo);
+            TerminalMensajes.GanaPierde(jugador, jugador.Nombre);
+            HistorialDeGanadores.GuardarGanador(ganadorTorneo);  
             
         }
     }

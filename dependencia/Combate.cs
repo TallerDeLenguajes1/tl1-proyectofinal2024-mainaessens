@@ -109,10 +109,10 @@ namespace CombateSimpson
         }
 
         private void RealizarAtaqueEspecial(Personaje atacante, Personaje defensor){
-    int dañoProvocado = CalcularDaño(atacante, defensor) * 3; 
-    Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
-    defensor.Salud -= dañoProvocado;
-    Console.Clear(); 
+        int dañoProvocado = CalcularDaño(atacante, defensor) * 5; 
+        Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
+        defensor.Salud -= dañoProvocado;
+        Console.Clear(); 
 }
         private int CalcularDaño(Personaje atacante, Personaje defensor)
         {
