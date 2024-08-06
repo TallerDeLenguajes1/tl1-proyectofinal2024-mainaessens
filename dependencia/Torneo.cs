@@ -40,6 +40,14 @@ namespace TorneoSimpson
                 else
                 {
                     Console.WriteLine("Has perdido el torneo.");
+                    Console.WriteLine("Iniciando pausa de 5 segundos...");
+                    Thread.Sleep(5000);  // Pausa de 5 segundos (5000 milisegundos)
+                    Console.WriteLine("Pausa terminada.");
+
+                    Console.WriteLine("Presione una tecla para continuar...");
+                    Console.ReadKey();  // Espera a que el usuario presione una tecla
+                    Console.WriteLine("Continuando...");
+                    Console.Clear(); 
                     return;
                 }
             }

@@ -5,15 +5,19 @@ namespace Mensajes
         public static void TituloJuego()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.CursorVisible = false;
             string[] letraASCII = {
                 @"_____ .   . .___       __  . .    . .__   __   __  .   .  __",
                 @"  |   |   | |         (__` | |\  /| |  \ (__` /  \ |\  | (__ ",
                 @"  |   |---| |---         \ | | \/ | |__/    \ |  | | \ |    \",
                 @"  |   |   | |___      \__/ | |    | |    \__/ \__/ |  \| \__/"
             };
-
-            Console.WriteLine(letraASCII);
-        }
+            
+            foreach (string linea in letraASCII)
+            {
+                Console.WriteLine(linea);
+            }
+            }
 
         public static void GanaPierde(Personaje p1, string ganador){
             if (ganador == p1.Nombre)

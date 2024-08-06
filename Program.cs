@@ -1,29 +1,20 @@
 ﻿using Mensajes;
+using Ganadores; 
 using Start;
-using MenuSeleccionable; 
+using MenuSeleccionable;
 
 internal class Program
 {
     static async Task Main(string[] args)
     {
-        Console.CursorVisible = false;
-        string[] letraASCII = {
-            @"_____ .   . .___       __  . .    . .__   __   __  .   .  __",
-            @"  |   |   | |         (__` | |\  /| |  \ (__` /  \ |\  | (__ ",
-            @"  |   |---| |---         \ | | \/ | |__/    \ |  | | \ |    \",
-            @"  |   |   | |___      \__/ | |    | |    \__/ \__/ |  \| \__/"
-        };
-        
-        foreach (string linea in letraASCII)
-        {
-            Console.WriteLine(linea);
-        }
+        TerminalMensajes.TituloJuego(); 
 
         bool salir = false;
         List<string> historialGanadores = new List<string>();
 
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Bienvenido al juego de Los Simpsons!");
+        
         while (!salir)
         {
             string[] opciones = { "Jugar", "Ver historial de ganadores", "Salir" };
@@ -35,7 +26,8 @@ internal class Program
                     await GameRun.EmpezarAJugar(historialGanadores);
                     break;
                 case 1:
-                    Historial.VerHistorial(historialGanadores);
+                    HistorialDeGanadores.MostrarHistorial(); 
+                    // Historial.VerHistorial(historialGanadores);
                     break;
                 case 2:
                     salir = true;

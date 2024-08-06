@@ -36,7 +36,7 @@ namespace CombateSimpson
                 ganador = enemigo.Nombre; 
             }
             //string ganador = jugador.Salud > 0 ? jugador.Nombre : enemigo.Nombre;
-            Console.WriteLine($"¡{ganador} ha ganado el combate!");
+            //Console.WriteLine($"¡{ganador} ha ganado el combate!");
             //Console.Clear();
             return ganador;
         }
@@ -61,7 +61,7 @@ namespace CombateSimpson
 
         private void TurnoConOpciones(Personaje atacante, Personaje defensor)
         {
-            string[] opciones = { "Atacar", "Defender", "Rendirse" };
+            string[] opciones = { "Atacar", "Defender", "Ataque Especial" ,"Rendirse" };
 
             while (true)
             {
@@ -74,11 +74,14 @@ namespace CombateSimpson
                 {
                     case 0: // Atacar
                         RealizarAtaque(atacante, defensor);
-                        return; // Salir del bucle después de la acción
+                        return; 
                     case 1: // Defender
                         RealizarDefensa(atacante);
-                        return; // Salir del bucle después de la acción
-                    case 2: // Rendirse
+                        return; 
+                    case 2: 
+                        RealizarAtaqueEspecial(atacante, defensor); 
+                        return; 
+                    case 3: // Rendirse
                         Console.WriteLine($"{atacante.Nombre} se rinde. ¡Has perdido el combate!");
                         Environment.Exit(0); 
                         break;
@@ -105,6 +108,12 @@ namespace CombateSimpson
             Console.Clear(); 
         }
 
+        private void RealizarAtaqueEspecial(Personaje atacante, Personaje defensor){
+    int dañoProvocado = CalcularDaño(atacante, defensor) * 3; 
+    Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
+    defensor.Salud -= dañoProvocado;
+    Console.Clear(); 
+}
         private int CalcularDaño(Personaje atacante, Personaje defensor)
         {
             int ataque = atacante.Destreza * atacante.Fuerza * atacante.Agresivo;
