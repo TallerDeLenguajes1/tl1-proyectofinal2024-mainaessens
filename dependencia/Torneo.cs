@@ -8,6 +8,7 @@ namespace TorneoSimpson
 {
     public class Torneo
     {
+        private bool pocionUsada = false; // Indica si la poción ha sido utilizada
         public void IniciarTorneo(Personaje jugador)
         {
             string[] nombresEnemigos = { "Kang", "Kodos", "Serak" };
@@ -19,13 +20,14 @@ namespace TorneoSimpson
                 Console.Clear();
                 Console.WriteLine($"Nivel {nivel}: {nombreEnemigo}");
                 Personaje enemigo = FabricaDePersonajes.CrearEnemigo(nombreEnemigo);
-                enemigo.Fuerza += 1;
-                enemigo.Velocidad += 1;
-                enemigo.Destreza += 1;
-                enemigo.Inteligencia += 1;
-                enemigo.Agresivo += 1;
+                enemigo.Fuerza += nivel;
+                enemigo.Velocidad += nivel;
+                enemigo.Destreza += nivel;
+                enemigo.Inteligencia += nivel;
+                enemigo.Agresivo += nivel;
 
-                Combate combate = new Combate(jugadorNivel, enemigo);
+                Combate combate = new Combate(jugadorNivel, enemigo, ref pocionUsada);
+
                 string ganador = combate.IniciarCombate();
 
                 if (ganador == jugador.Nombre)
@@ -41,9 +43,8 @@ namespace TorneoSimpson
                 else
                 {
                     Console.WriteLine("Has perdido el torneo.");
-                    Console.WriteLine("Iniciando pausa de 5 segundos...");
                     Thread.Sleep(5000);  // Pausa de 5 segundos (5000 milisegundos)
-                    Console.WriteLine("Pausa terminada.");
+                    TerminalMensajes.GanaPierde(jugador, jugador.Nombre); 
 
                     Console.WriteLine("Presione una tecla para continuar...");
                     Console.ReadKey();  // Espera a que el usuario presione una tecla

@@ -8,11 +8,13 @@ namespace CombateSimpson
         private Personaje enemigo;
         private Random random = new Random();
         private bool jugadorDefendiendo = false;
+        private bool pocionUsada; // Indica si la poción ha sido utilizada
 
-        public Combate(Personaje p1, Personaje p2)
+        public Combate(Personaje p1, Personaje p2, ref bool pocionUsada)
         {
             jugador = p1;
             enemigo = p2;
+            this.pocionUsada = pocionUsada;
             Console.Clear(); 
             Console.WriteLine($"¡Comienza la batalla entre {jugador.Nombre} y {enemigo.Nombre}!");
         }
@@ -61,7 +63,7 @@ namespace CombateSimpson
 
         private void TurnoConOpciones(Personaje atacante, Personaje defensor)
         {
-            string[] opciones = { "Atacar", "Defender", "Ataque Especial" ,"Rendirse" };
+            string[] opciones = { "Atacar", "Defender", "Ataque Especial" ,"Usar poción mágica","Rendirse" };
 
             while (true)
             {
@@ -81,7 +83,22 @@ namespace CombateSimpson
                     case 2: 
                         RealizarAtaqueEspecial(atacante, defensor); 
                         return; 
-                    case 3: // Rendirse
+                    case 3: 
+                        if (pocionUsada)
+                        {
+                            Console.WriteLine("Ya has usado la poción mágica.");
+                            Thread.Sleep(500);
+                        }
+                        else
+                        {
+                            jugador.Salud = 100; // Recuperar la salud al 100%
+                            pocionUsada = true; // Marcar la poción como usada
+                            Console.WriteLine($"{atacante.Nombre} ha usado una poción mágica y recuperado toda su salud.");
+                            Thread.Sleep(500);
+                        }
+                        Console.Clear(); 
+                        return;
+                    case 4: // Rendirse
                         Console.WriteLine($"{atacante.Nombre} se rinde. ¡Has perdido el combate!");
                         Environment.Exit(0); 
                         break;
@@ -112,6 +129,7 @@ namespace CombateSimpson
         int dañoProvocado = CalcularDaño(atacante, defensor) * 5; 
         Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
         defensor.Salud -= dañoProvocado;
+        Thread.Sleep(500);
         Console.Clear(); 
 }
         private int CalcularDaño(Personaje atacante, Personaje defensor)
