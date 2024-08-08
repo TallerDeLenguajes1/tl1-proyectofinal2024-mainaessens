@@ -34,6 +34,7 @@ namespace TorneoSimpson
 
                 if (ganador == jugador.Nombre)
                 {
+                    Console.Clear();
                     Console.WriteLine($"¡Felicidades! Has ganado el nivel {nivel + 1}");
                     Thread.Sleep(5000);
                     jugadorNivel.Fuerza += 5;
@@ -45,13 +46,9 @@ namespace TorneoSimpson
                 }
                 else
                 {
-                    Console.WriteLine("Has perdido el torneo.");
-                    Thread.Sleep(5000);  // Pausa de 5 segundos (5000 milisegundos)
-                    //TerminalMensajes.GanaPierde(jugador, jugador.Nombre); 
-
-                    Console.WriteLine("Presione una tecla para continuar...");
-                    Console.ReadKey();  // Espera a que el usuario presione una tecla
-                    Console.WriteLine("Continuando...");
+                    TerminalMensajes.Perder(); 
+                    Thread.Sleep(5000);
+                    TerminalMensajes.CentradorDeTexto("Presione una tecla para continuar...");
                     Console.Clear(); 
                     return;
                 }
