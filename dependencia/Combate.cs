@@ -70,7 +70,7 @@ namespace CombateSimpson
                 //Console.SetCursorPosition(0, 0); // Volver al inicio de la pantalla
                 //MostrarCuadroDeEstadisticas(jugador, enemigo);
                 Console.WriteLine($"\t{atacante.Nombre}, ¿qué quieres hacer?");
-                int seleccion = Menu.MostrarMenu(opciones);
+                int seleccion = Menu.MenuTorneo(opciones);
 
                 switch (seleccion)
                 {

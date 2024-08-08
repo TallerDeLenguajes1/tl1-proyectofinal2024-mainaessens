@@ -4,55 +4,79 @@ namespace MenuSeleccionable
 {
     public static class Menu
     {
-        public static int MostrarMenu(string[] opciones)
+        public static int MenuTorneo(string[] opciones)
         {
-            Console.Clear();
             Console.ResetColor();
-
-            int consoleWidth = Console.WindowWidth;
-            int consoleHeight = Console.WindowHeight;
-
-            // Determina el ancho máximo de las opciones para centrar el texto
-            int maxOptionLength = 0;
-            foreach (var opcion in opciones)
-            {
-                if (opcion.Length > maxOptionLength)
-                {
-                    maxOptionLength = opcion.Length;
-                }
-            }
-
-            // Calcula el margen izquierdo para centrar el texto
-            int marginLeft = (consoleWidth - maxOptionLength - 4) / 2; // 4 es por el número y punto
-
-            // Imprime las opciones centradas
             for (int i = 0; i < opciones.Length; i++)
             {
-                Console.SetCursorPosition(marginLeft, i + 2); // 2 es para dejar espacio en la parte superior
                 Console.WriteLine($"{i + 1}. {opciones[i]}");
             }
 
             int seleccion;
             while (true)
             {
-                Console.SetCursorPosition(marginLeft, opciones.Length + 3); // Posiciona el texto de entrada
                 Console.Write("Selecciona una opción: ");
                 if (int.TryParse(Console.ReadLine(), out seleccion) && seleccion >= 1 && seleccion <= opciones.Length)
                 {
                     return seleccion - 1;
                 }
-                Console.SetCursorPosition(marginLeft, opciones.Length + 3); // Borra la línea anterior
-                Console.Write(new string(' ', 30)); // Borra el texto anterior
-                Console.SetCursorPosition(marginLeft, opciones.Length + 3);
                 Console.WriteLine("Selección inválida. Por favor, elige una opción válida.");
-
-                // Redibuja el menú centrado
+                Console.Clear();
                 for (int i = 0; i < opciones.Length; i++)
                 {
-                    Console.SetCursorPosition(marginLeft, i + 2);
                     Console.WriteLine($"{i + 1}. {opciones[i]}");
                 }
             }
         }
+        public static int MostrarMenu(string[] opciones)
+        {
+            int seleccion = 0;
+            ConsoleKey tecla;
+
+            while (true)
+            {
+                Console.Clear();
+
+                int anchoConsola = Console.WindowWidth;
+
+                int[] posInicioX = new int[opciones.Length];
+                for (int i = 0; i < opciones.Length; i++)
+                {
+                    posInicioX[i] = (anchoConsola - opciones[i].Length - 2) / 2; 
+                }
+
+                for (int i = 0; i < opciones.Length; i++)
+                {
+                    Console.SetCursorPosition(posInicioX[i], Console.CursorTop);
+                    if (i == seleccion)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine($"> {opciones[i]}");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"  {opciones[i]}");
+                    }
+                }
+
+                tecla = Console.ReadKey(true).Key;
+
+                switch (tecla)
+                {
+                    case ConsoleKey.UpArrow:
+                        seleccion = (seleccion == 0) ? opciones.Length - 1 : seleccion - 1;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        seleccion = (seleccion == opciones.Length - 1) ? 0 : seleccion + 1;
+                        break;
+                    case ConsoleKey.Enter:
+                        return seleccion;
+                }
+            }
+        }
+
+
+    
     }
 }
