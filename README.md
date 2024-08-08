@@ -34,7 +34,7 @@ El audio en nuestro programa juega un papel crucial para mejorar la experiencia 
 
 ## Requisitos:
 *1. Tener instalado .Net versión 8.0 en su PC. Si no lo tiene descargado puede hacerlo desde [aqui](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)*  
-*2. Tener instalada la librería NAudio.Wave en su PC.*  
+*2. Tener instalada la librería NAudio.Wave en su PC. Se instala abriendo la terminal y ejecutando este código Install-Package NAudio*  
 *3. Clonar el repositorio actual desde una terminal de VisualStudioCode o desde la Bash de Git con el siguiente comando:*  
 ``` bash
     git clone https://github.com/TallerDeLenguajes1/tl1-proyectofinal2024-mainaessens
