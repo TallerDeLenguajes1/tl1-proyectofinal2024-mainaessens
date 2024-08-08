@@ -1,4 +1,5 @@
 using MenuSeleccionable;
+using Mensajes; 
 
 namespace CombateSimpson
 {
@@ -96,10 +97,12 @@ namespace CombateSimpson
                         }
                         Console.Clear(); 
                         return;
-                    case 4: // Rendirse
-                        Console.WriteLine($"{atacante.Nombre} se rinde. ¡Has perdido el combate!");
-                        Environment.Exit(0); 
-                        break;
+                    case 4:
+                        atacante.Salud = 0; 
+                        TerminalMensajes.Perder(); 
+                        Thread.Sleep(5000); 
+                        Console.Clear(); 
+                        return;
                     default:
                         Console.WriteLine("Opción no válida. Se asumirá que te rindes.");
                         Environment.Exit(0); 
