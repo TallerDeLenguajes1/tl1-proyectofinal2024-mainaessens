@@ -1,35 +1,34 @@
-#LOS SIMPSONS: INVASIÓN TERRESTRE
+# LOS SIMPSONS: INVASIÓN TERRESTRE
 
-##Presentación del Juego
+## Presentación del Juego
 
-###Bienvenido a Springfield, ayúdanos a defender la ciudad de una invasión extraterrestre
+### Bienvenido a Springfield, ayúdanos a defender la ciudad de una invasión extraterrestre
 
 Este juego te invita a unirte a los personajes de Los Simpsons para enfrentar una invasión alienígena en Springfield. A través de emocionantes desafíos y batallas, tendrás la oportunidad de salvar la ciudad de esta amenaza extraterrestre. ¡Prepárate para sumergirte en el mundo de Los Simpsons y demostrar tus habilidades!
 
 **Nota: El juego está diseñado para funcionar únicamente en Windows (consulta la sección Implementación -> Sonidos y música para más detalles).**
 
-##Funcionamiento del Juego
+## Funcionamiento del Juego
 
 Al iniciar el juego, serás recibido con un menú principal donde podrás elegir entre ijugar una nueva partida o ver el historial de ganadores. Una vez que comiences, deberás seleccionar tu personaje e iniciar la batalla contra los invasores alienígenas. Si sales victorioso, tu nombre y logros serán guardados en el historial de ganadores, donde podrás consultarlos más tarde.
 
 El juego está basado en la suerte y las decisiones estratégicas que tomes durante cada batalla. Al enfrentarte a los extraterrestres, podrás elegir entre diferentes acciones como atacar, defenderte, o realizar un ataque especial. ¡Cada movimiento cuenta para salvar Springfield!
 
-##Implementación
+## Implementación
 
 ### Utilización de la API
+En el juego, implementé una API de Los Simpsons que proporciona nombres de personajes, sus frases icónicas y una imagen de cada uno. Esto añade un elemento dinámico y entretenido al juego, permitiendo que todos los personajes de la serie sean seleccionables. Puedes explorar la API aquí: [Simpsons Quote API](https://thesimpsonsquoteapi.glitch.me/quotes).
 
-En el juego utilicé una API de clima Open-Meteo https://open-meteo.com/ para generar las condiciones de la arena. Esta API me pareció óptima ya que me permitía elegir el lugar de donde quería obtener las condiciones climáticas y seleccionar qué datos del tiempo me interesaba obtener como precipitaciones, temperaturas mínimas y máximas, cantidad de nieve acumulada, entre otros. Esto me pareció importante ya que me permitió elegir un lugar de condiciones climáticas hostiles que se parecieran a las dificultades a las cuales se enfrentan los tributos en la arena en la película.
-
-###Archivos JSON para Historial de Ganadores
+### Archivos JSON para Historial de Ganadores
 Para almacenar y recuperar el historial de ganadores, se utiliza un archivo JSON. Cada vez que un jugador gana una partida, su información se guarda en este archivo, permitiendo su consulta posterior a través del menú principal. Este historial incluye el nombre del ganador, la fecha de la victoria, y el nivel alcanzado.
 
-###Interfaz por Consola
+### Interfaz por Consola
 El juego presenta una interfaz en consola, utilizando arte ASCII para el título y otros elementos visuales. Esto le da un toque retro en línea con la estética de la serie Los Simpsons.
 
-###Animaciones
+### Animaciones
 El título del juego se presenta con una animación en consola que utiliza efectos de desplazamiento y colores para resaltar la experiencia visual. 
 
-###Música
+### Música
 El audio en nuestro programa juega un papel crucial para mejorar la experiencia del usuario, creando una atmósfera inmersiva. Para poder reproducir el sonido en este programa utilicé NAudio que es una poderosa librería de audio para .NET que facilita la manipulación y reproducción de archivos de audio en diversas aplicaciones. 
 
 
