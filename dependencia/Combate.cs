@@ -62,7 +62,7 @@ namespace CombateSimpson
         private void TurnoConOpciones(Personaje atacante, Personaje defensor)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            string[] opciones = { "Atacar", "Defender", "Ataque Especial" ,"Usar poción mágica","Rendirse" };
+            string[] opciones = { "Atacar", "Defender", "Ataque Especial" ,"Poción Mágica","Rendirse" };
 
             while (true)
             {
@@ -132,7 +132,7 @@ namespace CombateSimpson
 
         private void RealizarAtaqueEspecial(Personaje atacante, Personaje defensor){
             Console.ForegroundColor = ConsoleColor.Green;
-            int dañoProvocado = CalcularDaño(atacante, defensor) * 5; 
+            int dañoProvocado = CalcularDaño(atacante, defensor) * 10; 
             Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
             defensor.Salud -= dañoProvocado;
             Thread.Sleep(1000);

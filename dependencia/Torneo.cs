@@ -35,7 +35,8 @@ namespace TorneoSimpson
                 if (ganador == jugador.Nombre)
                 {
                     Console.Clear();
-                    Console.WriteLine($"¡Felicidades! Has ganado el nivel {nivel + 1}");
+                    TerminalMensajes.GanarNivel(enemigo.Nombre); 
+                    //Console.WriteLine($"¡Felicidades! Has ganado el nivel {nivel + 1}");
                     Thread.Sleep(5000);
                     jugadorNivel.Fuerza += 5;
                     jugadorNivel.Velocidad += 5;
@@ -48,7 +49,6 @@ namespace TorneoSimpson
                 {
                     TerminalMensajes.Perder(); 
                     Thread.Sleep(5000);
-                    TerminalMensajes.CentradorDeTexto("Presione una tecla para continuar...");
                     Console.Clear(); 
                     return;
                 }
@@ -61,8 +61,8 @@ namespace TorneoSimpson
                 NivelAlcanzado = nivel
             };
 
-            Console.WriteLine("¡Felicidades! Has ganado el torneo.");
-            TerminalMensajes.GanaPierde(jugador, jugador.Nombre);
+            TerminalMensajes.GanarTorneo(jugador.Nombre); 
+            Thread.Sleep(6000);
             HistorialDeGanadores.GuardarGanador(ganadorTorneo);  
             
         }

@@ -28,5 +28,10 @@
     "Nombre": "Homer Simpson",
     "Fecha": "2024-08-07T23:17:25.8176696-03:00",
     "NivelAlcanzado": 3
+  },
+  {
+    "Nombre": "Duffman",
+    "Fecha": "2024-08-08T00:07:56.6442394-03:00",
+    "NivelAlcanzado": 3
   }
 ]
