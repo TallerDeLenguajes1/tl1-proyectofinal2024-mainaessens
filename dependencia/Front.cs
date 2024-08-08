@@ -18,19 +18,11 @@ namespace Mensajes
         Console.CursorVisible = false;
 
          string[] cartel = {
-                                 @"___    _",
-                                  @"| |_||_",
-      @"sssSSSSSs                   | | ||_",
-   @"sSSSSSSSSSSSs                           sSSSSs             nn   sSSSs",
-  @"SSSS           ii  mM     mmm   pPPPPpp sSS           nn    nn sSSSSSS",
- @"SSSs           iII mMMMM  mMmmm pPP  PpppSs      oOoo  nNN   nN SS   SS",
- @"SSSs           iII mMMMMM mM Mm Pp     PPSSSSs  OOOOOO NNNn nNN SSSs",
- @"SSSSSSSssss    iIi mMM MMmM  Mm ppPPppPP  SSSSsoO   OO NNNNNNNN  SSSSss",
-    @"SSSSSSSSSs  iIi MMM  MMM  Mm PPPPppP      sSOO   OO NN  nNNN     SSSs",
-          @"SSSS IIi  mMM  MMm  Mm  Pp   sSSssSSSSOO ooOO nN   NN        SS",
-           @"sSS III   MM       MMm pPp    SSSSSS  OOOOO          sssssSsSS",
-@"sSSsssssSSSSS   II                                               SSSSSSS TM",
-  @"SSSSSSSSS",
+                        
+            @"░▒█░░░░▒█▀▀▀█░▒█▀▀▀█░░░▒█▀▀▀█░▀█▀░▒█▀▄▀█░▒█▀▀█░▒█▀▀▀█░▒█▀▀▀█░▒█▄░▒█░▒█▀▀▀█",
+            @"░▒█░░░░▒█░░▒█░░▀▀▀▄▄░░░░▀▀▀▄▄░▒█░░▒█▒█▒█░▒█▄▄█░░▀▀▀▄▄░▒█░░▒█░▒█▒█▒█░░▀▀▀▄▄",
+            @"░▒█▄▄█░▒█▄▄▄█░▒█▄▄▄█░░░▒█▄▄▄█░▄█▄░▒█░░▒█░▒█░░░░▒█▄▄▄█░▒█▄▄▄█░▒█░░▀█░▒█▄▄▄█",
+
         };
 
         string subtitle = "Invasión Extraterrestre";
@@ -109,53 +101,6 @@ namespace Mensajes
         Console.WriteLine(texto);
     }
 }
-    public static void GanaPierde(Personaje p1, string ganador){
-            if (ganador == p1.Nombre)
-            {   
-            Console.ForegroundColor = ConsoleColor.Blue; 
-            string[] cartel = {
-   @"********      **     ****     **     **     *******     *******   *******",
-  @"**//////**    ****   /**/**   /**    ****   /**////**   **/////** /**////** ",
- @"**      //    **//**  /**//**  /**   **//**  /**    /** **     //**/**   /** ",
-@"/**           **  //** /** //** /**  **  //** /**    /**/**      /**/*******  ",
-@"/**    ***** **********/**  //**/** **********/**    /**/**      /**/**///**  ",
-@"//**  ////**/**//////**/**   //****/**//////**/**    ** //**     ** /**  //** ",
- @"//******** /**     /**/**    //***/**     /**/*******   //*******  /**   //**",
-  @"////////  //      // //      /// //      // ///////     ///////   //     //" 
-            }; 
-            foreach (string linea in cartel)
-        {
-            Console.WriteLine(linea);
-        }
-
-            }else{
-                Console.ForegroundColor = ConsoleColor.Red; 
-                string[] cartel = {
-@"*******  ******** *******   *******   ******** *******     *******   *******  ",
-@"/**////**/**///// /**////** /**////** /**///// /**////**   **/////** /**////** ",
-@"/**   /**/**      /**   /** /**    /**/**      /**    /** **     //**/**   /** ",
-@"/******* /******* /*******  /**    /**/******* /**    /**/**      /**/*******  ",
-@"/**////  /**////  /**///**  /**    /**/**////  /**    /**/**      /**/**///**  ",
-@"/**      /**      /**  //** /**    ** /**      /**    ** //**     ** /**  //** ",
-@"/**      /********/**   //**/*******  /********/*******   //*******  /**   //**",
-@"//       //////// //     // ///////   //////// ///////     ///////   //     // "
-                };
-                foreach (string linea in cartel)
-        {
-            Console.WriteLine(linea);
-        }
-
-            }
-
-        Console.WriteLine("Iniciando pausa de 5 segundos...");
-        Thread.Sleep(5000);  // Pausa de 5 segundos (5000 milisegundos)
-        Console.WriteLine("Pausa terminada.");
-
-        Console.WriteLine("Presione una tecla para continuar...");
-        Console.ReadKey();  // Espera a que el usuario presione una tecla
-        Console.WriteLine("Continuando...");
-        Console.Clear(); 
-        }
     public static void CentradorDeTexto(string texto){
                     int consoleWidth = Console.WindowWidth;
                     int marginLeft = (consoleWidth - texto.Length) / 2;
@@ -356,3 +301,12 @@ namespace Mensajes
 // @"sSSsssssSSSSS   II                                               SSSSSSS TM",
 //   @"SSSSSSSSS",
 //         };
+
+// Console.WriteLine("Iniciando pausa de 5 segundos...");
+//         Thread.Sleep(5000);  // Pausa de 5 segundos (5000 milisegundos)
+//         Console.WriteLine("Pausa terminada.");
+
+//         Console.WriteLine("Presione una tecla para continuar...");
+//         Console.ReadKey();  // Espera a que el usuario presione una tecla
+//         Console.WriteLine("Continuando...");
+//         Console.Clear(); 

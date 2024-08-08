@@ -132,7 +132,7 @@ namespace CombateSimpson
 
         private void RealizarAtaqueEspecial(Personaje atacante, Personaje defensor){
             Console.ForegroundColor = ConsoleColor.Green;
-            int dañoProvocado = CalcularDaño(atacante, defensor) * 10; 
+            int dañoProvocado = CalcularDaño(atacante, defensor) * 15; 
             Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
             defensor.Salud -= dañoProvocado;
             Thread.Sleep(1000);
