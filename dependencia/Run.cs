@@ -9,7 +9,7 @@ namespace Start
 {
     public static class GameRun
 {
-    public static async Task EmpezarAJugar(List<string> historialGanadores)
+    public static async Task EmpezarAJugar()
     {
         try
         {

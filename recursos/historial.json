@@ -18,5 +18,10 @@
     "Nombre": "Homer Simpson",
     "Fecha": "2024-08-06T17:10:15.7618332-03:00",
     "NivelAlcanzado": 3
+  },
+  {
+    "Nombre": "Troy McClure",
+    "Fecha": "2024-08-06T17:34:21.0396265-03:00",
+    "NivelAlcanzado": 3
   }
 ]

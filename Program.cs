@@ -2,18 +2,15 @@
 using Ganadores; 
 using Start;
 using MenuSeleccionable;
+using Musica; 
 
 internal class Program
 {
     static async Task Main(string[] args)
     {
-        TerminalMensajes.TituloJuego(); 
+        Audio.MostrarOpcionesMusica();
 
         bool salir = false;
-        List<string> historialGanadores = new List<string>();
-
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("Bienvenido al juego de Los Simpsons!");
         
         while (!salir)
         {
@@ -23,11 +20,10 @@ internal class Program
             switch (seleccion)
             {
                 case 0:
-                    await GameRun.EmpezarAJugar(historialGanadores);
+                    await GameRun.EmpezarAJugar();
                     break;
                 case 1:
                     HistorialDeGanadores.MostrarHistorial(); 
-                    // Historial.VerHistorial(historialGanadores);
                     break;
                 case 2:
                     salir = true;

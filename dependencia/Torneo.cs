@@ -19,6 +19,7 @@ namespace TorneoSimpson
                 Personaje jugadorNivel = FabricaDePersonajes.CrearPersonaje(jugador.Nombre);
                 Console.Clear();
                 Console.WriteLine($"Nivel {nivel}: {nombreEnemigo}");
+                Thread.Sleep(500);
                 Personaje enemigo = FabricaDePersonajes.CrearEnemigo(nombreEnemigo);
                 enemigo.Fuerza += nivel;
                 enemigo.Velocidad += nivel;
@@ -33,6 +34,7 @@ namespace TorneoSimpson
                 if (ganador == jugador.Nombre)
                 {
                     Console.WriteLine($"¡Felicidades! Has ganado el nivel {nivel + 1}");
+                    Thread.Sleep(5000);
                     jugadorNivel.Fuerza += 5;
                     jugadorNivel.Velocidad += 5;
                     jugadorNivel.Destreza += 5;
@@ -44,7 +46,7 @@ namespace TorneoSimpson
                 {
                     Console.WriteLine("Has perdido el torneo.");
                     Thread.Sleep(5000);  // Pausa de 5 segundos (5000 milisegundos)
-                    TerminalMensajes.GanaPierde(jugador, jugador.Nombre); 
+                    //TerminalMensajes.GanaPierde(jugador, jugador.Nombre); 
 
                     Console.WriteLine("Presione una tecla para continuar...");
                     Console.ReadKey();  // Espera a que el usuario presione una tecla
