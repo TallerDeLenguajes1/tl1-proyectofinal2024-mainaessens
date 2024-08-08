@@ -18,14 +18,30 @@ namespace Start
             List<CitaAPI> citasAPI = await CitaAPI.ObtenerCitasAPI(5);
 
             Console.WriteLine("Selecciona tu personaje:");
-            string[] personajes = new string[citasAPI.Count];
+            HashSet<string> personajesSeleccionados = new HashSet<string>();
+            List<string> personajesDisponibles = new List<string>();
+
             for (int i = 0; i < citasAPI.Count; i++)
             {
-                personajes[i] = citasAPI[i].Character;
+                string personaje = citasAPI[i].Character;
+                if (!personajesSeleccionados.Contains(personaje))
+                {
+                    personajesDisponibles.Add(personaje);
+                    personajesSeleccionados.Add(personaje);
+                }
             }
 
+            if (personajesDisponibles.Count == 0)
+            {
+                Console.WriteLine("No hay personajes disponibles para seleccionar.");
+                return; // Puedes manejar esta situación según lo que necesites en tu juego.
+            }
+
+            string[] personajes = personajesDisponibles.ToArray();
+
             int seleccion = Menu.MostrarMenu(personajes);
-            CitaAPI citaSeleccionada = citasAPI[seleccion];
+            CitaAPI citaSeleccionada = citasAPI.First(c => c.Character == personajes[seleccion]);
+
 
             string frase = citaSeleccionada.Quote; 
             Console.Clear();
