@@ -25,11 +25,9 @@ namespace CombateSimpson
             {
                 MostrarCuadroDeEstadisticas(jugador, enemigo);
                 TurnoConOpciones(jugador, enemigo);
-                if (enemigo.Salud <= 0) break;
                 Turno(enemigo, jugador);
             }
 
-            //MostrarCuadroDeEstadisticas(jugador, enemigo);
             string ganador; 
             if (jugador.Salud > 0)
             {
@@ -37,18 +35,17 @@ namespace CombateSimpson
             }else {
                 ganador = enemigo.Nombre; 
             }
-            //string ganador = jugador.Salud > 0 ? jugador.Nombre : enemigo.Nombre;
-            //Console.WriteLine($"¡{ganador} ha ganado el combate!");
-            //Console.Clear();
+           
             return ganador;
         }
 
         private void Turno(Personaje atacante, Personaje defensor)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             int dañoProvocado;
             if (jugadorDefendiendo && defensor == jugador)
             {
-                dañoProvocado = CalcularDaño(atacante, defensor) / 2;
+                dañoProvocado = CalcularDaño(atacante, defensor) / 2; 
                 Console.WriteLine($"{defensor.Nombre} se defiende y recibe {dañoProvocado} de daño reducido.");
                 jugadorDefendiendo = false; // Reseteamos la defensa del jugador
             }
@@ -59,25 +56,26 @@ namespace CombateSimpson
             }
 
             defensor.Salud -= dañoProvocado;
+            Console.ResetColor();
         }
 
         private void TurnoConOpciones(Personaje atacante, Personaje defensor)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             string[] opciones = { "Atacar", "Defender", "Ataque Especial" ,"Usar poción mágica","Rendirse" };
 
             while (true)
             {
-                //Console.SetCursorPosition(0, 0); // Volver al inicio de la pantalla
-                //MostrarCuadroDeEstadisticas(jugador, enemigo);
                 Console.WriteLine($"\t{atacante.Nombre}, ¿qué quieres hacer?");
-                int seleccion = Menu.MenuTorneo(opciones);
+                int seleccion = Menu.MenuTorneo
+                (opciones);
 
                 switch (seleccion)
                 {
-                    case 0: // Atacar
+                    case 0: 
                         RealizarAtaque(atacante, defensor);
                         return; 
-                    case 1: // Defender
+                    case 1:
                         RealizarDefensa(atacante);
                         return; 
                     case 2: 
@@ -107,30 +105,39 @@ namespace CombateSimpson
                         Environment.Exit(0); 
                         break;
                 }
+                Console.ResetColor();
             }
         }
 
         private void RealizarAtaque(Personaje atacante, Personaje defensor)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             int dañoProvocado = CalcularDaño(atacante, defensor);
             Console.WriteLine($"{atacante.Nombre} causa {dañoProvocado} de daño a {defensor.Nombre}");
             defensor.Salud -= dañoProvocado;
+            Thread.Sleep(1000);
             Console.Clear(); 
+            Console.ResetColor();
         }
 
         private void RealizarDefensa(Personaje defensor)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{defensor.Nombre} se defiende y recibirá menos daño en el próximo turno.");
-            jugadorDefendiendo = true;
+            jugadorDefendiendo = true; 
+            Thread.Sleep(1000);
             Console.Clear(); 
+            Console.ResetColor();
         }
 
         private void RealizarAtaqueEspecial(Personaje atacante, Personaje defensor){
-        int dañoProvocado = CalcularDaño(atacante, defensor) * 5; 
-        Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
-        defensor.Salud -= dañoProvocado;
-        Thread.Sleep(500);
-        Console.Clear(); 
+            Console.ForegroundColor = ConsoleColor.Green;
+            int dañoProvocado = CalcularDaño(atacante, defensor) * 5; 
+            Console.WriteLine($"{atacante.Nombre} usa un ataque especial y causa {dañoProvocado} de daño a {defensor.Nombre}");
+            defensor.Salud -= dañoProvocado;
+            Thread.Sleep(1000);
+            Console.Clear(); 
+            Console.ResetColor();
 }
         private int CalcularDaño(Personaje atacante, Personaje defensor)
         {

@@ -2,7 +2,8 @@ using System;
 using CombateSimpson;
 using Fabrica; 
 using Mensajes; 
-using Ganadores; 
+using Ganadores;
+using System.Diagnostics;
 
 namespace TorneoSimpson
 {
@@ -18,8 +19,8 @@ namespace TorneoSimpson
             {
                 Personaje jugadorNivel = FabricaDePersonajes.CrearPersonaje(jugador.Nombre);
                 Console.Clear();
-                Console.WriteLine($"Nivel {nivel}: {nombreEnemigo}");
-                Thread.Sleep(500);
+                Thread.Sleep(2000);
+                TerminalMensajes.Niveles(nivel); 
                 Personaje enemigo = FabricaDePersonajes.CrearEnemigo(nombreEnemigo);
                 enemigo.Fuerza += nivel;
                 enemigo.Velocidad += nivel;

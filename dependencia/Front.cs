@@ -6,24 +6,7 @@ using Musica;
 namespace Mensajes
 {
     public static class TerminalMensajes
-    {
-        public static void TituloJuego()
-        {
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.CursorVisible = false;
-            string[] letraASCII = {
-                @"_____ .   . .___       __  . .    . .__   __   __  .   .  __",
-                @"  |   |   | |         (__` | |\  /| |  \ (__` /  \ |\  | (__ ",
-                @"  |   |---| |---         \ | | \/ | |__/    \ |  | | \ |    \",
-                @"  |   |   | |___      \__/ | |    | |    \__/ \__/ |  \| \__/"
-            };
-            
-            foreach (string linea in letraASCII)
-            {
-                Console.WriteLine(linea);
-            }
-            }
-        
+    {   
     public static class Animaciones
 {
     public static void Intro()
@@ -179,7 +162,65 @@ namespace Mensajes
                     Console.SetCursorPosition(marginLeft, Console.CursorTop);
                     Console.WriteLine(texto);
         }
-    
+    public static void Niveles(int nivel){
+        switch (nivel)
+            {
+                case 0:
+                    Console.ForegroundColor = ConsoleColor.Blue; 
+                    string[] cartel = {
+                                @"▄▄    ▄ ▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄        ▄▄▄▄",
+                                @"█  █  █ █   █  █ █  █       █   █      █    █",
+                                @"█   █▄█ █   █  █▄█  █    ▄▄▄█   █       █   █",
+                                @"█       █   █       █   █▄▄▄█   █       █   █",
+                                @"█  ▄    █   █       █    ▄▄▄█   █▄▄▄    █   █",
+                                @"█ █ █   █   ██     ██   █▄▄▄█       █   █   █",
+                                @"█▄█  █▄▄█▄▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█   █▄▄▄█",  
+        };
+        foreach (string linea in cartel)
+            {
+                CentradorDeTexto(linea);
+            }
+            Thread.Sleep(3000);
+            Console.ResetColor();
+                    break;
+                case 1:
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                    string[] cartel1 = {
+                                @"▄▄    ▄ ▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄        ▄▄▄▄▄▄▄",
+                                @"█  █  █ █   █  █ █  █       █   █      █       █",
+                                @"█   █▄█ █   █  █▄█  █    ▄▄▄█   █      █▄▄▄▄   █",
+                                @"█       █   █       █   █▄▄▄█   █       ▄▄▄▄█  █",
+                                @"█  ▄    █   █       █    ▄▄▄█   █▄▄▄   █ ▄▄▄▄▄▄█",
+                                @"█ █ █   █   ██     ██   █▄▄▄█       █  █ █▄▄▄▄▄",
+                                @"█▄█  █▄▄█▄▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█",
+        };
+         foreach (string linea in cartel1)
+            {
+                CentradorDeTexto(linea);
+            }
+            Thread.Sleep(3000);
+            Console.ResetColor();
+                    break;
+                case 2:
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                    string[] cartel2 = {
+                                @"▄▄    ▄ ▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄        ▄▄▄▄▄▄▄",
+                                @"█  █  █ █   █  █ █  █       █   █      █       █",
+                                @"█   █▄█ █   █  █▄█  █    ▄▄▄█   █      █▄▄▄    █",
+                                @"█       █   █       █   █▄▄▄█   █       ▄▄▄█   █",
+                                @"█  ▄    █   █       █    ▄▄▄█   █▄▄▄   █▄▄▄    █",
+                                @"█ █ █   █   ██     ██   █▄▄▄█       █   ▄▄▄█   █",
+                                @"█▄█  █▄▄█▄▄▄█ █▄▄▄█ █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█", 
+        };
+         foreach (string linea in cartel2)
+            {
+                CentradorDeTexto(linea);
+            }
+            Thread.Sleep(3000);
+            Console.ResetColor();
+                    break;
+            }
+    }
     }
 }
  
