@@ -27,6 +27,12 @@ namespace Start
             int seleccion = Menu.MostrarMenu(personajes);
             CitaAPI citaSeleccionada = citasAPI[seleccion];
 
+            string frase = citaSeleccionada.Quote; 
+            Console.Clear();
+            TerminalMensajes.CentradorDeTexto($"Su personaje es: {citaSeleccionada.Character}"); 
+            TerminalMensajes.CentradorDeTexto($"Frase: {frase}");
+            Thread.Sleep(6000);
+
             string url = citaSeleccionada.Image;
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
 
