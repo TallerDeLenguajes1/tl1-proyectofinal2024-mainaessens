@@ -1,0 +1,27 @@
+[
+    {
+        "Character": "Homer Simpson",
+        "Quote": "D'oh!",
+        "Image": "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FHomerSimpson.png?1497567511939"
+    },
+    {
+        "Character": "Bart Simpson",
+        "Quote": "Eat my shorts!",
+        "Image": "https://example.com/bart.png"
+    },
+    {
+        "Character": "Lisa Simpson",
+        "Quote": "If anyone wants me, I'll be in my room.",
+        "Image": "https://example.com/lisa.png"
+    },
+    {
+        "Character": "Marge Simpson",
+        "Quote": "Mmm~mm~mm~mm!",
+        "Image": "https://example.com/marge.png"
+    },
+    {
+        "Character": "Mr. Burns",
+        "Quote": "Excellent!",
+        "Image": "https://example.com/burns.png"
+    }
+]
